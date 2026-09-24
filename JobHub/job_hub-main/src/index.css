@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 222 62% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 222 50% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 222 50% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 225 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 222 20% 14%;
+    --muted-foreground: 222 10% 65%;
+
+    --accent: 180 100% 76%;
+    --accent-foreground: 222 62% 4%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 15%;
+    --input: 222 30% 15%;
+    --ring: 225 100% 55%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 222 50% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 225 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 40% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 222 40% 15%;
+    --sidebar-ring: 225 100% 55%;
+
+    --success: 152 60% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 39 99% 56%;
+    --warning-foreground: 222 62% 4%;
+    --info: 205 80% 52%;
+    --info-foreground: 0 0% 100%;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    --shadow-elevated: 0 10px 40px rgba(27, 84, 255, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98];
+  }
+
+
+  .hardware-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}

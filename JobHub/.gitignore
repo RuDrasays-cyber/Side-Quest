@@ -1,0 +1,27 @@
+# =====================================================
+# PLACEMENT TRACKER — ROOT .gitignore
+# =====================================================
+
+# ── Environment / Secrets ──
+.env
+.env.*
+!.env.example
+
+# ── OS / Editor ──
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Node (root-level lockfile from accidental install) ──
+/node_modules/
+/package-lock.json
+
+# ── Python ──
+__pycache__/
+*.pyc
+venv/
+.venv/
